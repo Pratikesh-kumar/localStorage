@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+</head>
+<style>
+  
+  input{
+    font-size: 20px;
+  width: 300px;
+  
+  }
+  label{
+    font-size: larger;
+  }
+  button{
+    color:white;
+    background-color: black;
+  }
+  
+  .container {
+  margin: auto;
+  width: 40%;
+  border: 3px solid rgb(23, 43, 132);
+  padding: 10px;
+  text-align: center;
+  background-color:whitesmoke;
+}
+  body{
+    background:linear-gradient(to top left,#3ed8ff,#a8f5ff)  ;
+  }
+  h1 {
+  text-shadow: 2px 2px rgb(32, 113, 142);
+}
+
+</style>
+<body>
+  <h2><marquee behavior="" direction="left"><i>Welcome to booking platform.Please enter the details</i></i></marquee></h3>
+  
+    <div class="container">
+      <h1><b><center>Book  a call</b></h1>
+    <form onsubmit="tolocalStorage(event)">
+    <label><b>Name:</b><br></label>
+    <input type="text" name="username" placeholder="write your name" required/>
+    <br><br>
+    <label><b>e-mail:</b><br></label>
+    <input type="email" name="email" placeholder="enter your e-mail id" required/>
+    <br><br>
+    <label><b>Phone.no</b><br></label>
+    <input type="text" name="phone.no" placeholder="enter your phone no." required/>
+    <br> <br> <br> 
+    <label><b>Time for call</b><br></label>
+    <input type="date" name="date"/>
+  <br><br>
+     <button type="submit">Get a call</button>
+  </form>
+  
+  </div>
+  <script>
+    function tolocalStorage(event){
+      event.preventDefault();
+      const name =event.target.username.value;
+       const email=event.target.email.value;
+       localStorage.setItem("name",name);
+       localStorage.setItem("email",email)
+    }
+
+  </script>
+</body>
+</html>
